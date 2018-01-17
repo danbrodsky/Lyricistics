@@ -8,7 +8,7 @@ import math
 import json
 import matplotlib.pyplot as plt
 
-data = json.load(open('songData.json'))
+data = json.load(open('../datasets/songData.json'))
 
 combineData = []
 order = []
@@ -46,4 +46,6 @@ for i in range(len(data2D)):
   dist = euclideanDist(data2D[i],data2D[test])
   best[i] = dist
 sorted_x = sorted(best, key=best.get)[:5]
-print(sorted_x)
+
+for x in sorted_x:
+  print(order[x])
